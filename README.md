@@ -1,5 +1,4 @@
 # INET3101-Lab1 Database Interface
-=====================================
 
 Authors
 --------
