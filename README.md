@@ -1,70 +1,65 @@
 # INET3101-Lab1 Database Interface
 
-Authors
---------
-Abdirahim Abdullahi
+## Author
+**Abdirahim Abdullahi**
 
-Program Description
---------
-A simple C program simulating database operations. It prompts for a database
-name on startup, then displays a menu for record handling and keeps track of
-database changes.
+## Program Description
+A simple C program that simulates basic database operations. It prompts for a database
+name upon execution, then displays a menu for record handling and tracks changes
+to the database.
 
-Overview
---------
-The following functions are used to manage and display records in a simple C program:
+## Menu Definition & Usage
+1. **Print all records**  
+2. **Add record**  
+3. **Delete the last record**  
+4. **Print number of records**  
+5. **Print database size**  
+6. **Print number of changes**  
+7. **Exit**
 
-1. PrintAllRecords
-   Prints all the records the program currently has.
+After selecting an option (1–7), the program executes the corresponding function and 
+loops back to this menu until the user chooses **7 (Exit)**.
 
-2. AddRecord
-   Lets users add data (part number, part name, part size, etc.) to new records. 
+## Functions
 
-3. DeleteRecord
-   Informs the user that the last record has been deleted.
+### PrintAllRecords
+- **Input**: None  
+- **Output**: Placeholder message (no real data yet).  
+- **Description**: Prints a message indicating the records would appear here.
 
-4. PrintNumRecords
-   Displays a message indicating the number of records should be printed (though no actual data is shown yet).
+### AddRecord
+- **Input**: Interactive prompts for part data (int, string, float, etc.).  
+- **Output**: Echoes user input and increments the change counter.  
+- **Description**: Reads user input via `scanf`, prints out the collected data, 
+  then calls `PrintNumChanges(false)` to update and display modifications.
 
-5. PrintDatabaseSize
-   Shows a message that the size of the database should be printed (again, no real data shown yet).
+### DeleteRecord
+- **Input**: None  
+- **Output**: Placeholder message indicating a record has been deleted.  
+- **Description**: No real deletion yet; simply prints a message.
 
-6. PrintNumChanges
-   Keeps track of and increments the number of times the database has been changed.
+### PrintNumRecords
+- **Input**: None  
+- **Output**: A placeholder message about the record count.  
+- **Description**: Prints the message "You have entered the Print number of records function."
 
-Functions
----------
-PrintAllRecords
-- Input: None
-- Output: Prints a placeholder message for all records.
-- Algorithm: Displays a simple message (no actual record storage yet).
+### PrintDatabaseSize
+- **Input**: None  
+- **Output**: A placeholder message about the database size.  
+- **Description**: Prints the message "You have entered the Print database size function."
 
-AddRecord
-- Input: Prompts user for part data (int, string, float, etc.).
-- Output: Echoes user input; increments the change counter.
-- Algorithm: Uses scanf to read inputs, prints them, calls PrintNumChanges(false).
+### PrintNumChanges (bool print)
+- **Input**: A boolean `print`.  
+  - If `true`, displays the current number of modifications.  
+  - If `false`, increments the change counter and prints the updated total.  
+- **Output**: Either the current total changes or the incremented result.  
+- **Description**: Uses a static/global counter to keep track of changes.
 
-DeleteRecord
-- Input: None
-- Output: Prints a message indicating the last record is deleted.
-- Algorithm: Placeholder (no actual deletion yet).
+## Files
+- **main.c**: Contains the main function, menu logic, and function definitions.  
+- **README.txt** or **README.md**: This design document in plain text or Markdown format.
 
-PrintNumRecords
-- Input: None
-- Output: Placeholder message about total records.
-- Algorithm: Simple print statement only.
-
-PrintDatabaseSize
-- Input: None
-- Output: Placeholder message about database size.
-- Algorithm: Simple print statement only.
-
-PrintNumChanges (bool print)
-- Input: `print`: if true, display total changes; if false, increment changes.
-- Output: Either current count or new count after increment.
-- Algorithm: Maintains a static/global counter.
-
-Files
------
-- myLab1.c (contains main and function definitions)
-- README.txt (this design document)
+## Compilation & Execution
+1. Compile the program:
+   ```bash
+   gcc main.c -o lab1
